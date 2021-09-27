@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- https://www.bootstrapcdn.com/ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.js"></script>
+    <script src="https://unpkg.com/vue@next"></script>
+    <title>ved ikke</title>
+</head>
+
+<body>
+    <h1>sjov latin</h1>
+    <div id="app">
+        <h2>Get All etc (GET)</h2>
+        <button id="getAllButton" v-on:click="getAllTodos" class="btn btn-primary">Get all todos</button>
+        <br />
+    
+        <ul id="todolist" v-if="todos.length">
+            <li v-for="todo in todos">
+                {{todo.title}}
+            </li>
+        </ul>
+        <div v-else>No todos</div>
+
+        <h2>Get by UserID</h2>
+        <input v-model="UserId" placeholder="Id" type="number" />
+        <button v-on:click="getByUserId(UserId)" class="btn btn-primary">Get by id</button>
+        <div v-if="singleTodo">
+            {{singleTodo.id}}
+        </div>
+        <div v-else>No such todo</div>
+
+    <script src="javascriptdel.js"></script>
+</body>
+
+</html>
