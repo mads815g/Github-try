@@ -21,16 +21,16 @@
     
         <ul id="todolist" v-if="todos.length">
             <li v-for="todo in todos">
-                {{todo.title}}
+                {{todo.id}} {{todo.title}} {{todo.completed}}
             </li>
         </ul>
         <div v-else>No todos</div>
 
-        <h2>Get by UserID</h2>
-        <input v-model="UserId" placeholder="Id" type="number" />
-        <button v-on:click="getByUserId(UserId)" class="btn btn-primary">Get by id</button>
+        <h2>Get by ID</h2>
+        <input v-model="idToGetBy" placeholder="id" type="number" />
+        <button v-on:click="getById(idToGetBy)" class="btn btn-primary">Get by id</button>
         <div v-if="singleTodo">
-            {{singleTodo.id}}
+            {{singleTodo.title}}
         </div>
         <div v-else>No such todo</div>
 

@@ -6,8 +6,8 @@ Vue.createApp({
     data() {
         return {
             todos: [],
-            userId: -1,
-            singleTodo: null
+            idToGetBy : -1,
+            singleTodo: null,
         }
     },
     methods: {
@@ -22,11 +22,11 @@ Vue.createApp({
                 alert(ex.message) // https://www.w3schools.com/js/js_popup.asp
             }
         },
-        async getByUserId(userId) {
-            const url = baseUrl + "/" + userId
+        async getById(id) {
+            const url = baseUrl + "/" + id
             try {
                 const response = await axios.get(url)
-                this.singleCar = await response.data
+                this.singleTodo = await response.data
             } catch (ex) {
                 alert(ex.message)
             }
